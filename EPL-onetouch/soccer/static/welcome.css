@@ -1,0 +1,79 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.backgroundImg {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://cdnuploads.aa.com.tr/uploads/Contents/2020/05/31/thumbs_b_c_8f22e1e33cf0649f40fdc5c26d36d001.jpg?v=193304');
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.col-1 {
+    flex-basis: 40%;
+    position: relative;
+    margin-left: 50px;
+    margin-top: 150px;
+}
+
+.col-1 h2 {
+    font-size: 54px;
+    font-weight: bold;
+    color: white;
+}
+
+.col-1 h3 {
+    font-size: 30px;
+    color: white;
+    font-weight: 100;
+    margin: 20px 0 10px;
+}
+
+.col-1 p {
+    font-size: 16px;
+    color: white;
+    font-weight: 100;
+    margin: 30px 0;
+}
+
+button {
+    width: 140px;
+    border: 0;
+    padding: 12px 10px;
+    outline: none;
+    color: white;
+    background: black;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: width 0.5s;
+}
+
+button i {
+    width: 30px;
+}
+
+button:hover {
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

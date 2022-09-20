@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- bootstrap CSS import  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Jquery import -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!--  FontAwesome Kit  -->
+    <script src="https://kit.fontawesome.com/e822c222b1.js" crossorigin="anonymous"></script>
+
+    <!-- welcome CSS import -->
+    <link href='{{ url_for("static", filename="welcome.css") }}' rel="stylesheet">
+
+    <title>Welcome | EPL 원터치</title>
+</head>
+<body>
+    <div class="backgroundImg">
+        <div class="container">
+            <div class="row">
+                <div class="col-1">
+                    <h2>EPL 원터치</h2>
+                    <h3>EPL에 대한 모든 정보를 원하신다면?</h3>
+                    <p>EPL에 대한 모든 정보를 확인하고, 팀에 응원메세지를 남겨주세요.</p>
+                    <button type="button" onclick="window.location.href='/login'">로그인 페이지<i class="fa-solid fa-arrow-right-long"></i></button>
+                </div>
+            </div>
+    </div>
+    </div>
+</body>
+</html>
