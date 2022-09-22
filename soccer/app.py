@@ -16,32 +16,24 @@ from datetime import datetime, timedelta
 
 import hashlib
 
+
+
+
 @app.route('/')
 def welcome():
     return render_template('welcome.html')
 
+@app.route('/main')
+def home():
+    token_receive = request.cookies.get('mytoken')
+    try:
+        payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
 
-#epl순위
-@app.route('/record', methods=['GET'])
-def ranking_get():
-    ranking_list = list(db.eplRank.find({}, {'_id':False}))
-    # return jsonify({'eplRank':ranking_list})
-    return render_template('index.html', ranking_list= ranking_list)
-
-
-    # jinja2를 이용한 데이터 관리
-
-@app.route('/news1')
-def news1():
-    return render_template('news1.html')
-
-@app.route('/news2')
-def news2():
-    return render_template('news2.html')
-
-@app.route('/news3')
-def news3():
-    return render_template('news3.html')
+        return render_template('index.html')
+    except jwt.ExpiredSignatureError:
+        return redirect(url_for("signin", msg="로그인 시간이 만료되었습니다."))
+    except jwt.exceptions.DecodeError:
+        return redirect(url_for("welcome", msg="로그인 정보가 존재하지 않습니다."))
 
 
 # 로그인 페이지
@@ -104,7 +96,34 @@ def log_in():
     except jwt.ExpiredSignatureError:
         return redirect(url_for("login", msg="로그인 시간이 만료되었습니다."))
     except jwt.exceptions.DecodeError:
-        return redirect(url_for("login", msg="로그인 정보가 존재하지 않습니다."))
+        return redirect(url_for("welcome", msg="로그인 정보가 존재하지 않습니다."))
+
+
+@app.route('/main')
+def main():
+    return render_template('index.html')
+
+#epl순위
+@app.route('/record', methods=['GET'])
+def ranking_get():
+    ranking_list = list(db.eplRank.find({}, {'_id':False}))
+    # return jsonify({'eplRank':ranking_list})
+    return render_template('index.html', ranking_list= ranking_list)
+
+
+    # jinja2를 이용한 데이터 관리
+
+@app.route('/news1')
+def news1():
+    return render_template('news1.html')
+
+@app.route('/news2')
+def news2():
+    return render_template('news2.html')
+
+@app.route('/news3')
+def news3():
+    return render_template('news3.html')
 
 
 
