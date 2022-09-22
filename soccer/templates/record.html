@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">EPL Table</h1>
+                <div class="lead text-muted"></div>
+                <table class="table">
+                        <th scope="col">rank</th>
+                        <th scope="col">team</th>
+                        <th scope="col">played</th>
+                        <th scope="col">won</th>
+                        <th scope="col">drawn</th>
+                        <th scope="col">lost</th>
+                        <th scope="col">pts</th>
+                </table>
+                {% for ranking_list in ranking_list %}
+                <table class="table">
+                        <th scope="row">{{ ranking_list.rank }}</th>
+                        <th scope="row">{{ ranking_list.team }}</th>
+                        <th scope="row">{{ ranking_list.played }}</th>
+                        <th scope="row">{{ ranking_list.won }}</th>
+                        <th scope="row">{{ ranking_list.drawn }}</th>
+                        <th scope="row">{{ ranking_list.lost }}</th>
+                        <th scope="row">{{ ranking_list.pts }}</th>
+                </table>
+                {% endfor %}
+
+            </div>
+        </div>
+
+
+</body>
+</html>
