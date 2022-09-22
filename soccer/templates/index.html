@@ -36,7 +36,7 @@
 
     <script>
         function sign_out() {
-                $.removeCookie('mytoken', {path: '/main'});
+                $.removeCookie('mytoken', {path: '/'});
                 alert('로그아웃!')
                 window.location.href = "/"
             }
@@ -59,7 +59,7 @@
 
     <div class="container">
         <!--container 안에 들어간 요소들은 간격을 띄워서 컨텐츠들이 약간 가운데로 들어간다-->
-        <a href="/record" class="navbar-brand align-middle">
+        <a href="/main" class="navbar-brand align-middle">
             <!-- navbar class는 네비겨이션 바의 모양을 출력해준다-->
             <!-- align-middle : 요소를 가운데 정렬함 -->
             <h3 class="m-0"> <!--크기를 조절해주는 클래스-->
